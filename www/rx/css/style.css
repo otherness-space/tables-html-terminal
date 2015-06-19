@@ -1,0 +1,81 @@
+html, body, header, nav, main, section, article, table, tr, td, aside, footer {
+
+    /**  */
+    box-sizing: border-box;
+
+}
+
+body, header, nav, footer {
+    /**  */
+    display: flex;
+}
+main, section, article, aside {
+    /**  */
+    display: inline-flex;
+}
+header, nav, main, section, article, table, aside, footer, div {
+    /**  */
+    position: relative;
+}
+
+/**
+
+selector {
+
+    tblr (box offsets if 'position' is other thn static relative  margin edge of element): <length> | <percentage> | auto | inherit;
+}
+
+*/
+
+body, header, nav, main, section, aside, footer html {
+    /** */
+}
+body {
+    /** */
+}
+header {
+    /** */
+}
+nav {
+    /** */
+}
+main {
+    /** */
+}
+section {
+    /** */
+}
+article {
+    /** */
+}
+table {
+    /** */
+}
+
+colgroup {
+
+    /**  */
+}
+
+col {
+
+}
+
+tr {
+
+    /**  */
+
+}
+
+td {
+
+    /**  */
+
+}
+
+aside {
+    /** */
+}
+footer {
+    /** */
+}
