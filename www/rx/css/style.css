@@ -31,10 +31,20 @@ header, nav, main, section, article, aside, footer, h1, h2, h3, h4, h5, h6 {
     display: -webkit-flex;
     display: flex;
 }
+
+.table-style, .row-odd, .row-even, .cell-line-number-column, .cell-line-code-column-odd, .cell-line-code-column-even, .cell-odd, .cell-even, {
+
+    -webkit-display: block;
+    display: block;
+}
 header, nav, footer {
     -webkit-flex-flow: column wrap;
     -moz-flex-flow: column wrap;
     flex-flow: column wrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 header, nav, main, section, article, aside, footer, div, h1, h2, h3, h4, h5, h6 {
     -webkit-box-pack: center;
@@ -102,7 +112,9 @@ table {
 colgroup {
     /**  */
 }
-col {}
+col {
+    /** */
+}
 tr {
     /**  */
 }
@@ -194,6 +206,7 @@ h1 {
 }
 .terminal-box-style:hover {
     max-width: 100%;
+    height: auto;
     -webkit-transition-duration: 2s;
     -moz-transition-duration: 2s;
     -o-transition-duration: 2s;
@@ -202,20 +215,44 @@ h1 {
     -moz-transition-timing-function: ease-out;
     -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    overflow-x: auto;
+    overflow-y: auto;
 }
+
+/**
+*
+* warning
+* https://css-tricks.com/using-divs-inside-tables/
+* in this circumstance divs inside a td will control the style of the cell more
+* effectively at this time.
+* otherwise the style stops at the edge of the viewport. when the hover selector
+* is engaged and the overflow begins to scoll the backgournd-color stops at the
+* edge of the screen while the text keeps on flowing...
+*
+* or maybe not...
+*
+*/
+
 .table-style {
     /**  */
-    display: table;
-    table-layout: auto;
-    width: 19.375em;
-}
-
-.row-odd, .row-even {
-
+    /*display: table;
+    table-layout: fixed;*/
+    /*display: flex;*/
     vertical-align: bottom;
-    font-family: 'Lucida Console', 'Courier New', Monospace;
-    display: block;
     border-collapse: collapse;
+    /*width: 100%;*/
+    min-height: 2em;
+    /*overflow-x: auto;
+    overflow-y: auto;*/
+    white-space: nowrap;
+}
+.row-odd, .row-even {
+    /*display: block;*/
+    border-collapse: collapse;
+    padding-left: 0.3125em;
+    /*vertical-align: bottom;*/
+    font-family: 'Lucida Console', 'Courier New', Monospace;
+    width: 100%;
 
 }
 .row-odd {
@@ -225,53 +262,98 @@ h1 {
     /**  */
     background-color: #DCDCDC;
 }
-.cell-line-number-column, .cell-line-code-column {
+
+.cell-line-number-column, .cell-line-code-column-odd, .cell-line-code-column-even, .cell-odd, .cell-even {
     /**  */
-    display: block;
+    /*display: block;*/
     border-collapse: collapse;
-    border-style: solid;
-    border-width: 0;
-    border-top: 0;
+    /*border-style: solid;*/
+    /*border-width: 0;*/
+    /*border-top: 0;*/
+
 }
-
 .cell-line-number-column {
-
     /**  */
     margin: auto;
-    color: #545457;
-    /*display: block;*/
-    width: auto;
     padding-right: 0.5em;
-    /*margin-right: 0.75em;*/
-    /*border-top: 0;*/
     border-left: 0.75rem;
     border-right: 0.75rem;
-    border-bottom: .0625rem;
-    text-align: right;
+    border-bottom: 0.0625rem;
+    padding-top: 0.125rem;
+    width: auto;
+    /*height: 0.75em;*/
+    color: #545457;
+    text-align: left;
     font-weight: bold;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /*display: block;*/
+    /*margin-right: 0.75em;*/
+    /*border-top: 0;*/
+}
+
+.cell-line-code-column-odd, .cell-line-code-column-even {
+    /**  */
+
+    width: 100%;
+    /*margin: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: .5rem;*/
+    /*height: 0.5em;*/
+    /*color: #006600;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;*/
+    /*display: block;*/
+    /*border-top: 0;*/
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.cell-line-code-column-even {
+
+    /**  */
+    /*width: 100%;*/
+
 
 }
 
-.cell-line-code-column {
+.cell-odd, .cell-even  {
 
     /**  */
     margin: 0;
-    color: #006600;
-    /*display: block;*/
-    /*border-top: 0;*/
     border-left: 0;
     border-right: 0;
     border-bottom: .5rem;
+    width: 100%;
+    color: #006600;
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
 
 }
+
+.cell-odd  {
+
+    /**  */
+
+}
+
+.cell-even  {
+
+    /**  */
+    background-color: #DCDCDC;
+
+}
+
+
 
 
 /*
@@ -287,23 +369,21 @@ h1 {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 .terminal-li {
     /** <li> style */
+    display: block;
     min-width: 2.5em;
-    text-align: right;
+    /*text-align: right;*/
     font-family: 'Courier New';
     font-weight: 900;
+
 }
 .terminal-li::before {
     /** li:before style */
     content: counter(item) "   ";
     counter-increment: item;
-    text-align: right;
+    /*text-align: right;*/
 }
 
 /**
