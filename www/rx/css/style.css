@@ -209,21 +209,50 @@ h1 {
     table-layout: auto;
     width: 19.375em;
 }
-
 .row-odd {
-
     /**  */
-
 }
-
 .row-even {
-
     /**  */
-
 }
-
 .cell {
-
     /**  */
-    
 }
+
+/*
+* terminal <ol> style adapted <ol> style appropriated from
+*
+* http://stackoverflow.com/questions/11946098/how-to-remove-dot-after-number-in-ordered-list-items-in-ol-li
+*
+*/
+
+.terminal-ol {
+    /** <ol> style */
+    counter-reset: item;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.terminal-li {
+    /** <li> style */
+    min-width: 2.5em;
+    text-align: right;
+    font-family: 'Courier New';
+    font-weight: 900;
+}
+.terminal-li::before {
+    /** li:before style */
+    content: counter(item) "   ";
+    counter-increment: item;
+    text-align: right;
+}
+
+/**
+*
+* End of appropriation
+*
+*/
