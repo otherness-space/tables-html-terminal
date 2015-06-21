@@ -227,6 +227,9 @@ h1 {
 }
 .cell {
     /**  */
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 0;
 }
 
 /*
