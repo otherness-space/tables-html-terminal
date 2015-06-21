@@ -209,11 +209,21 @@ h1 {
     table-layout: auto;
     width: 19.375em;
 }
+
+.row-odd, .row-even {
+
+    vertical-align: bottom;
+    font-family: 'Lucida Console', 'Courier New', Monospace;
+    display: block;
+    border-collapse: collapse;
+
+}
 .row-odd {
     /**  */
 }
 .row-even {
     /**  */
+    background-color: #DCDCDC;
 }
 .cell {
     /**  */
