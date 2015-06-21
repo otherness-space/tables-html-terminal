@@ -31,9 +31,7 @@ header, nav, main, section, article, aside, footer, h1, h2, h3, h4, h5, h6 {
     display: -webkit-flex;
     display: flex;
 }
-
 .table-style, .row-odd, .row-even, .cell-line-number-column, .cell-line-code-column-odd, .cell-line-code-column-even, .cell-odd, .cell-even, {
-
     -webkit-display: block;
     display: block;
 }
@@ -253,7 +251,6 @@ h1 {
     /*vertical-align: bottom;*/
     font-family: 'Lucida Console', 'Courier New', Monospace;
     width: 100%;
-
 }
 .row-odd {
     /**  */
@@ -262,7 +259,6 @@ h1 {
     /**  */
     background-color: #DCDCDC;
 }
-
 .cell-line-number-column, .cell-line-code-column-odd, .cell-line-code-column-even, .cell-odd, .cell-even {
     /**  */
     /*display: block;*/
@@ -270,7 +266,6 @@ h1 {
     /*border-style: solid;*/
     /*border-width: 0;*/
     /*border-top: 0;*/
-
 }
 .cell-line-number-column {
     /**  */
@@ -293,10 +288,8 @@ h1 {
     /*margin-right: 0.75em;*/
     /*border-top: 0;*/
 }
-
 .cell-line-code-column-odd, .cell-line-code-column-even {
     /**  */
-
     width: 100%;
     /*margin: 0;
     border-left: 0;
@@ -315,17 +308,14 @@ h1 {
     -ms-user-select: text;
     user-select: text;
 }
-
+.cell-line-code-column-odd:hover, .cell-line-code-column-even:hover {
+    background-color: linen;
+}
 .cell-line-code-column-even {
-
     /**  */
     /*width: 100%;*/
-
-
 }
-
-.cell-odd, .cell-even  {
-
+.cell-odd, .cell-even {
     /**  */
     margin: 0;
     border-left: 0;
@@ -337,24 +327,14 @@ h1 {
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
-
 }
-
-.cell-odd  {
-
+.cell-odd {
     /**  */
-
 }
-
-.cell-even  {
-
+.cell-even {
     /**  */
     background-color: #DCDCDC;
-
 }
-
-
-
 
 /*
 * terminal <ol> style adapted <ol> style appropriated from
@@ -377,7 +357,6 @@ h1 {
     text-align: right;
     font-family: 'Courier New';
     font-weight: 900;
-
 }
 .terminal-li::before {
     /** li:before style */
