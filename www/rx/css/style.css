@@ -1,8 +1,6 @@
-html, body, header, nav, main, section, article, table, aside, footer,, div, h1, h2, h3, h4, h5, h6 {
-
+html, body, header, nav, main, section, article, table, aside, footer, , div, h1, h2, h3, h4, h5, h6 {
     /**  */
     box-sizing: border-box;
-
 }
 html, body {
     -webkit-display: block;
@@ -24,36 +22,62 @@ html, body {
     -moz-font-size-adjust: 100%;
     font-size-adjust: 100%;
     /** end appropriated and slightly adapted html style */
-body, header, nav, footer {
+}
+header, nav, main, section, article, aside, footer, h1, h2, h3, h4, h5, h6 {
     /**  */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
-main, section, article, aside {
-    /**  */
-    display: inline-flex;
+header, nav, footer {
+    -webkit-flex-flow: column wrap;
+    -moz-flex-flow: column wrap;
+    flex-flow: column wrap;
 }
-header, nav, main, section, article, table, aside, footer, div {
-    /**  */
-    position: relative;
+header, nav, main, section, article, aside, footer, div, h1, h2, h3, h4, h5, h6 {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-box-pack: center;
+    box-pack: center;
+    -webkit-flex-pack: center;
+    -moz-flex-pack: center;
+    -ms-flex-pack: center;
+    flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-flex-line-pack: distribute;
+    -moz-flex-line-pack: distribute;
+    -ms-flex-line-pack: distribute;
+    flex-line-pack: distribute;
+    -webkit-align-content: space-around;
+    align-content: space-around;
+    -webkit-flex-item-align: center;
+    -moz-flex-item-align: center;
+    -ms-flex-item-align: center;
+    flex-item-align: center;
+    -webkit-align-self: center;
+    align-self: center;
+    -webkit-flex: auto;
+    -moz-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
 }
-
-/**
-
-selector {
-
-    tblr (box offsets if 'position' is other thn static relative  margin edge of element): <length> | <percentage> | auto | inherit;
-}
-
-*/
-
-body, header, nav, main, section, aside, footer {
+body {
     /** */
-
-    width: 100%
+    position: absolute;
+    top: 0;
 }
-
-
-
+body, header, nav, main, section, article, aside, footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+main, section, article, aside, footer {
+    min-height: 2em;
+}
 body {
     /** */
 }
@@ -75,31 +99,110 @@ article {
 table {
     /** */
 }
-
 colgroup {
-
     /**  */
 }
-
-col {
-
-}
-
+col {}
 tr {
-
     /**  */
-
 }
-
 td {
-
     /**  */
-
 }
-
 aside {
     /** */
 }
 footer {
     /** */
+}
+
+/**
+
+selector {
+
+    tblr (box offsets if 'position' is other thn static relative  margin edge of element): <length> | <percentage> | auto | inherit;
+}
+
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.15625em;
+}
+h1 {
+    line-height: .75em;
+    /*min-height: */
+    margin-top: 0.15625em;
+}
+.header-borderline-black {
+    min-width: 20em;
+    min-height: 2.5em;
+    /*margin: 0;
+    padding: 0;*/
+    border: 0.0625rem solid black;
+    border-collapse: collapse;
+    /*width: 100%;*/
+    white-space: wrap;
+}
+.borderline-black {
+    border: 0.0625rem solid black;
+    border-collapse: collapse;
+}
+.terminal-box-style {
+
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-box-pack: start;
+    box-pack: start;
+    -webkit-flex-pack: start;
+    -moz-flex-pack: start;
+    -ms-flex-pack: start;
+    flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+
+    -webkit-flex-line-pack: start;
+    -moz-flex-line-pack: start;
+    -ms-flex-line-pack: start;
+    flex-line-pack: start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+
+    border: 0.0625em solid Gainsboro;
+    /*border: 0.0625em solid black;*/
+    max-width: 19.375em;
+    max-height: 10rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.15625em;
+    /*margin-left: 0.25em;*/
+    margin-right: 0;
+    padding-right: 0;
+    /*overflow-x: auto;
+    overflow-y: auto;*/
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.terminal-box-style:hover {
+    max-width: 100%;
+    -webkit-transition-duration: 2s;
+    -moz-transition-duration: 2s;
+    -o-transition-duration: 2s;
+    transition-duration: 2s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
