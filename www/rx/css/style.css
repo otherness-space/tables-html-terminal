@@ -374,7 +374,7 @@ h1 {
     /** <li> style */
     display: block;
     min-width: 2.5em;
-    /*text-align: right;*/
+    text-align: right;
     font-family: 'Courier New';
     font-weight: 900;
 
